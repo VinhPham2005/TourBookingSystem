@@ -2,26 +2,26 @@ import java.util.*;
 
 public class Guide extends Human {
     private float GuideExperience;
-    private ArrayList<String> ForiegnLanguage, ToursList;
+    private ArrayList<String> ForeignLanguage, ToursList;
 
     public Guide() {
         super();
         this.GuideExperience = 0.0F;
-        this.ForiegnLanguage = new ArrayList<>();
+        this.ForeignLanguage = new ArrayList<>();
         this.ToursList = new ArrayList<>();
     }
 
-    public Guide(float GuideExperience, ArrayList<String> ForiegnLanguage, ArrayList<String> ToursList, Human other) {
+    public Guide(float GuideExperience, ArrayList<String> ForeignLanguage, ArrayList<String> ToursList, Human other) {
         super(other);
         this.GuideExperience = GuideExperience;
-        this.ForiegnLanguage = ForiegnLanguage;
+        this.ForeignLanguage = ForeignLanguage;
         this.ToursList = ToursList;
     }
 
-    public Guide(float GuideExperience, ArrayList<String> ForiegnLanguage, ArrayList<String> ToursList, String Id, String Name, String BirthDay, String PhoneNumber, String Email) {
+    public Guide(float GuideExperience, ArrayList<String> ForeignLanguage, ArrayList<String> ToursList, String Id, String Name, String BirthDay, String PhoneNumber, String Email) {
         super(Id, Name, BirthDay, PhoneNumber, Email);
         this.GuideExperience = GuideExperience;
-        this.ForiegnLanguage = ForiegnLanguage;
+        this.ForeignLanguage = ForeignLanguage;
         this.ToursList = ToursList;
     }
 
@@ -33,12 +33,12 @@ public class Guide extends Human {
         this.GuideExperience = GuideExperience;
     }
 
-    public ArrayList<String> getForiegnLanguage() {
-        return ForiegnLanguage;
+    public ArrayList<String> getForeignLanguage() {
+        return ForeignLanguage;
     }
 
-    public void setForiegnLanguage(ArrayList<String> ForiegnLanguage) {
-        this.ForiegnLanguage = ForiegnLanguage;
+    public void setForeignLanguage(ArrayList<String> ForeignLanguage) {
+        this.ForeignLanguage = ForeignLanguage;
     }
 
     public ArrayList<String> getToursList() {
