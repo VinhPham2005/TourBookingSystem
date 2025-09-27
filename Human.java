@@ -1,5 +1,6 @@
 public class Human {
     private String Id, Name, BirthDay, PhoneNumber, Email;
+   private static int count = 0;
 
     public Human() {
         this.Id = "";
@@ -17,6 +18,17 @@ public class Human {
         this.Email = other.Email;
     }
 
+
+    public Human(String Name, String BirthDay, String PhoneNumber, String Email) {
+        count++;
+        this.Id = String.format("%d", count);
+        this.Name = Name;
+        this.BirthDay = BirthDay;
+        this.PhoneNumber = PhoneNumber;
+        this.Email = Email;
+    }
+    
+
     public Human(String Id, String Name, String BirthDay, String PhoneNumber, String Email) {
         this.Id = Id;
         this.Name = Name;
@@ -24,6 +36,8 @@ public class Human {
         this.PhoneNumber = PhoneNumber;
         this.Email = Email;
     }
+
+
 
     public String getId() {
         return Id;
