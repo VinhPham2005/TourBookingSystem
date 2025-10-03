@@ -16,21 +16,7 @@ public class Guide extends Human {
         this.ToursList = new ArrayList<>();
     }
 
-    public Guide(float GuideExperience, ArrayList<String> ForeignLanguage, ArrayList<String> ToursList, Human other) {
-        super(other);
-        this.GuideExperience = GuideExperience;
-        this.ForeignLanguage = ForeignLanguage;
-        this.ToursList = ToursList;
-    }
-
-    public Guide(float GuideExperience, ArrayList<String> ForeignLanguage, ArrayList<String> ToursList, String Name, String BirthDay, String PhoneNumber, String Email) {
-        super(Name, BirthDay, PhoneNumber, Email);
-        this.GuideExperience = GuideExperience;
-        this.ForeignLanguage = ForeignLanguage;
-        this.ToursList = ToursList;
-    }
-
-    public Guide(float GuideExperience, ArrayList<String> ForeignLanguage, ArrayList<String> ToursList, String Id, String Name, String BirthDay, String PhoneNumber, String Email) {
+    public Guide(String Id, String Name, String BirthDay, String PhoneNumber, String Email, float GuideExperience, ArrayList<String> ForeignLanguage, ArrayList<String> ToursList) {
         super(Id, Name, BirthDay, PhoneNumber, Email);
         this.GuideExperience = GuideExperience;
         this.ForeignLanguage = ForeignLanguage;
@@ -61,7 +47,7 @@ public class Guide extends Human {
         this.ToursList = ToursList;
     }
     
-    public String getForeignLanguageAsArray() {
+    public String getForeignLanguageAsString() {
         StringBuilder Langs = new StringBuilder();
         for(String lang : this.ForeignLanguage) {
             Langs.append(lang).append(" ");
@@ -69,7 +55,7 @@ public class Guide extends Human {
         return Langs.toString().trim();
     }
     
-    public String getToursListAsArray() {
+    public String getToursListAsString() {
         StringBuilder Tours = new StringBuilder();
         for(String tour : this.ToursList) {
             Tours.append(tour).append(" ");
@@ -77,7 +63,7 @@ public class Guide extends Human {
         return Tours.toString().trim();
     }
     
-    public Guide findById (String id) {
+    public static Guide findById (String id) {
         return GuideList.get(id);
     }
     
@@ -90,7 +76,7 @@ public class Guide extends Human {
         "  Phone: " + this.getPhoneNumber() + "\n" +
         "  Email: " + this.getEmail() + "\n" +
         "  Experience: " + this.getGuideExperience() + " years\n" +
-        "  Languages: " + this.getForeignLanguageAsArray() + "\n" +
-        "  Tours: " + this.getToursListAsArray() + "\n\n";
+        "  Languages: " + this.getForeignLanguageAsString() + "\n" +
+        "  Tours: " + this.getToursListAsString() + "\n\n";
     }
 }

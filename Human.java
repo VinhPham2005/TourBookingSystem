@@ -10,25 +10,6 @@ public class Human {
         this.Email = "";
     }
     
-    public Human(Human other) {
-        this.Id = other.Id;
-        this.Name = other.Name;
-        this.BirthDay = other.BirthDay;
-        this.PhoneNumber = other.PhoneNumber;
-        this.Email = other.Email;
-    }
-
-
-    public Human(String Name, String BirthDay, String PhoneNumber, String Email) {
-        count++;
-        this.Id = String.format("%d", count);
-        this.Name = Name;
-        this.BirthDay = BirthDay;
-        this.PhoneNumber = PhoneNumber;
-        this.Email = Email;
-    }
-    
-
     public Human(String Id, String Name, String BirthDay, String PhoneNumber, String Email) {
         this.Id = Id;
         this.Name = Name;
@@ -37,48 +18,28 @@ public class Human {
         this.Email = Email;
     }
 
-
-
     public String getId() {
         return Id;
-    }
-
-    public void setId(String Id) {
-        this.Id = Id;
     }
 
     public String getName() {
         return Name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
     public String getBirthDay() {
         return BirthDay;
-    }
-
-    public void setBirthDay(String BirthDay) {
-        this.BirthDay = BirthDay;
     }
 
     public String getPhoneNumber() {
         return PhoneNumber;
     }
 
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
-    }
-
     public String getEmail() {
         return Email;
     }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
     
+    
+ 
     public void chuanHoaTenVaNgaySinh() {
         //Chuan hoa ten
         StringBuilder tmpName = new StringBuilder();
@@ -93,6 +54,9 @@ public class Human {
         StringBuilder tmpBirth = new StringBuilder(this.BirthDay);
         if(tmpBirth.charAt(1) == '/') tmpBirth.insert(0, 0);
         if(tmpBirth.charAt(4) == '/') tmpBirth.insert(3, 0);
-        this.BirthDay = tmpBirth.toString();
+        String[] birthParts = tmpBirth.toString().split("/");
+        StringBuilder birth = new StringBuilder();
+        birth.append(birthParts[2]).append("-").append(birthParts[1]).append("-").append(birthParts[0]);
+        this.BirthDay = birth.toString();
     }
 }
